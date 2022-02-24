@@ -1,15 +1,18 @@
 console.log("Let's get this party started!");
 
-const formElement = document.querySelector("form");
-const searchTerm =  document.querySelector("#searchTerm");
+const form = document.querySelector("form");
+let searchTerm =  document.querySelector("#searchInput").value;
 
+function getGif() {
 
-formElement.addEventListener("submit", async function(event){
+}
+
+form.addEventListener("submit", async function(event){
     event.preventDefault();
-    // console.log("from submitted!");
+    console.log("from submitted!");
     searchTerm.value = '';
 
-    let response = await axios.get('api.giphy.com/v1/gifs/search', {
+    let response = await axios.get('https://api.giphy.com/v1/gifs/search', {
         params: {
             q: searchTerm,
             api_key: 'vY0bZrawNcgjW64eLSVdRFndHxkcSz1A'
@@ -17,8 +20,8 @@ formElement.addEventListener("submit", async function(event){
     });
     console.log(response);
     return response.data;
+    console.log("data returned");
   })
-
 
 
 
