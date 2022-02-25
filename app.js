@@ -1,14 +1,18 @@
 console.log("Let's get this party started!");
 
 const form = document.querySelector("form");
+const button = document.querySelector("#remove");
+const gifDiv = document.querySelector("#addedGifs");
+
 let searchTerm =  document.querySelector("#searchInput").value;
 
 function getRandomGif(response) {
-    let gifDiv = document.querySelector("#gifDiv");
     let numResults = response.data.length;
     if (numResults) {
         let randomIndex = Math.floor(Math.random() * numResults);
-        let newGif = document.createElement("IMG").src= response.data[randomIndex].images.original.url;
+        let newGif = document.createElement("img")
+        newGif.classList.add('newGif')
+        newGif.src= response.data[randomIndex].images.original.url;
         gifDiv.append(newGif);
     }
 }
@@ -23,11 +27,10 @@ form.addEventListener("submit", async function(event){
             api_key: 'vY0bZrawNcgjW64eLSVdRFndHxkcSz1A'
         }
     });
-    console.log(response);
-
     getRandomGif(response.data)
-    // searchTerm.value = '';
   })
 
-
+button.addEventListener("click", function () {
+    gifDiv.innerHTML = '';
+});
 

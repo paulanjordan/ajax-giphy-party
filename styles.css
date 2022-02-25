@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+    color: #000;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 90px;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(255, 225, 248);
+}
+
+form {
+    display: inline-block;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.buttonStyle {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: salmon;
+    border-radius: 3px;
+    border-color: grey;
+    border-width: 1px;
+}
+
+.newGif {
+    max-width: 33%;
+    min-width: 33%;
+}
